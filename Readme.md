@@ -1,5 +1,5 @@
 
-# nclk-form-signin
+# cm-form-signin
 
   Basic signin form
 
@@ -7,7 +7,7 @@
 
   Install with [component(1)](http://component.io):
 
-    $ component install onclickstudios/nclk-form-signin
+    $ component install onclickstudios/cm-form-signin
 
 ## API
 
