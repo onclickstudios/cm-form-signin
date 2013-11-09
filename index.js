@@ -3,17 +3,22 @@ hoquet = require('hoquet');
 
 /**
  * 
- * @param action String form action
+ * @param options Object form action, method, class
  * @param data Object optional data to prepopulate the form
  */
-module.exports = function (action, data) {
+module.exports = function (context) {
+  var
+  context = context || {},
+  data = context.data || {};
   
   return hoquet.render(
     ['form',
-     {action:action, method:'post', class:'cm cm-form cm-form-signin'},
-     ['input', {type:'text', name:'username', placeholder:'username', value:data && data.username}],
-     ['input', {type:'password', name:'password', placeholder:'password', value:data && data.password}],
-     ['input', {type:'submit', name:'submit', value:data && data.submit || 'submit'}]]
+     {action:(context.action),
+      method:(context.method || 'post'),
+      class:'cm cm-form cm-form-signin' + (context.class)},
+     ['input', {type:'text', name:'username', placeholder:'username', value:data.username}],
+     ['input', {type:'password', name:'password', placeholder:'password', value:data.password}],
+     ['input', {type:'submit', name:'submit', value:data.submit || 'submit'}]]
   );
   
 };
