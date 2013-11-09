@@ -6,7 +6,7 @@ hoquet = require('hoquet');
  * @param options Object form action, method, class
  * @param data Object optional data to prepopulate the form
  */
-module.exports = function (context) {
+module.exports = function cmFormSignin(context) {
   var
   context = context || {},
   data = context.data || {};
