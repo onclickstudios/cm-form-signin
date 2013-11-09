@@ -15,7 +15,7 @@ module.exports = function cmFormSignin(context) {
     ['form',
      {action:(context.action),
       method:(context.method || 'post'),
-      class:'cm cm-form cm-form-signin' + (context.class)},
+      class:'cm cm-form cm-form-signin' + (context && context.class || '')},
      ['input', {type:'text', name:'username', placeholder:'username', value:data.username}],
      ['input', {type:'password', name:'password', placeholder:'password', value:data.password}],
      ['input', {type:'submit', name:'submit', value:data.submit || 'submit'}]]
