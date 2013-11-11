@@ -13,8 +13,7 @@ var exports = module.exports = function cmFormSignin(context) {
   
   return hoquet.render(
     ['form',
-     {action:context.action + 
-             (context.redirect_uri ? '?redirect_uri=' + context.redirect_uri : ''),
+     {action:context.action + (context.query || ''),
       method:(context.method || 'post'),
       class:'cm cm-form cm-form-signin' + (context && context.class || '')},
      ['input', {type:'text', name:'username', placeholder:'username', value:data.username}],
