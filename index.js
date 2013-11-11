@@ -22,7 +22,3 @@ var exports = module.exports = function cmFormSignin(context) {
   );
   
 };
-
-exports.behavior = function(context) {
-  
-};
